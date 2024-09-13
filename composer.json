@@ -1,0 +1,22 @@
+{
+    "name": "multapi/google-login-sdk",
+    "description": "SDK para integração de login social com Google usando a api da empresa Multapi.site.",
+    "type": "library",
+    "require": {
+        "php": ">=7.4",
+        "google/apiclient": "^2.17"
+    },
+    "autoload": {
+        "psr-4": {
+            "GoogleLoginSDK\\": "src/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lex Luthor developer",
+            "email": "lexluthordevfull@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}

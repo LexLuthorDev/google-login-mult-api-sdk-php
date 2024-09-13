@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Login Test</title>
+</head>
+<body>
+    <h1>Google Login Test</h1>
+    <button id="loginButton">Login with Google</button>
+
+    <script>
+        document.getElementById('loginButton').addEventListener('click', function () {
+            // Fazendo uma chamada AJAX para obter a URL de login do Google
+            fetch('/public/callback.php?action=getLoginUrl')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.authorizeUrl) {
+                        window.location.href = data.authorizeUrl; // Redireciona o usuário para o Google
+                    } else {
+                        alert('Erro ao gerar a URL de login.');
+                    }
+                })
+                .catch(error => console.error('Erro:', error));
+        });
+    </script>
+</body>
+</html>
